@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#s2 {
+    color: darkmagenta;
+}
+
+#s1 {
+    /* margin: 100px;
+    padding: 100px; */
+    color: black;
+}
+
+p {
+    text-align:center;
+}
+
+p span {
+    color: crimson;
+}
+
+.fuente {
+    font-size: xx-small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span::after{
+    content: '\A''\A'; white-space: pre;
+
+}
+
+#Borrar {
+    background-color: red;
+}
+#Copiar {
+    background-color: cyan;
+}
+#Guardar {
+    background-color: green;
+}
+
+.ui {
+    /* color: white; */
+    margin: 10px;
+}
+
+body {
+    background-image: url("fondo.jpg");
+}
