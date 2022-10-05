@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 01</title>
+    <!-- <link rel="stylesheet" href="style04.css"> -->
+    <script>
+        function cambiarColor(color) {
+            console.log("El color recibido es ", color);
+            var e = document.getElementById("texto");
+            e.style.color = color;
+        }
+        function cambiarColor1(color) {
+            console.log("El color recibido es ", color);
+            var e = document.getElementById("texto1");
+            e.style.color = color;
+        }
+        function cambiarColor2(color) {
+            console.log("El color recibido es ", color);
+            var e = document.getElementById("texto2");
+            e.style.color = color;
+        }
+        function cambiarColores(color) {
+            console.log("El color recibido es ", color);
+            let c = document.getElementsByTagName("p"); //
+            // for (let index = 0; index < c.length; index++) {
+            //     const element = c[index];
+            //     c[index].style.color = color;
+
+            // }
+            var arr = [].slice.call(c);
+            arr.forEach(element => {
+                console.log(element);
+                element.style.color = color;
+            });
+        }
+    </script>
+</head>
+<body>
+    <!-- p#texto{simple texto}+(button[onclick=cambiarColor\(yellow\)])*2 -->
+    <p id="texto">simple texto</p>
+    <p id="texto1">simple texto</p>
+    <p id="texto2">simple texto</p>
+    <button onclick="cambiarColor('red'); cambiarColor1('yellow'); cambiarColor2('green')">Rojo</button>
+    <button onclick="cambiarColor('blue'); cambiarColor1('gray'); cambiarColor2('orange')">Azul</button>
+    <button onclick="cambiarColores('orange')">Colores</button>
+</body>
+</html>
