@@ -25,16 +25,41 @@
         function cambiarColores(color) {
             console.log("El color recibido es ", color);
             let c = document.getElementsByTagName("p"); //
+            var arr = [].slice.call(c);
+            // ---------------------------------for---------------------------------------------------------------
             // for (let index = 0; index < c.length; index++) {
             //     const element = c[index];
             //     c[index].style.color = color;
 
             // }
-            var arr = [].slice.call(c);
-            arr.forEach(element => {
-                console.log(element);
-                element.style.color = color;
-            });
+
+            // ---------------------------------for each----------------------------------------------------------------
+            // arr.forEach(element => {
+            //     console.log(element);
+            //     element.style.color = color;
+            // });
+
+            // ---------------------------------for in----------------------------------------------------------------
+            //     let i = 0;
+            // for (let x in c){
+            //     if (i < c.length) {
+            //         c[x].style.color = "blue";
+            //         i++;
+            //     }
+            // };
+
+            // for (const x in c) {
+            //     console.log(x);
+            //     c[x].style.color = color;
+            //     // c.style.color = color;
+            // }
+
+            for (const x in c) {
+                if (object.hasOwnProperty.call(c, x)) {
+                    const element = c[x].style.color = "blue";
+                    
+                }
+            }
         }
     </script>
 </head>
