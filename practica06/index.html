@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REQ/RES</title>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <h1 id="respuesta"></h1>
+    <form action="" method="">
+        <input type="text" name="email" placeholder="email" id="email">
+        <input type="password" name="password" placeholder="password" id="password">
+        <button type="button" id="enviar">enviar</button>
+    </form>
+
+    <script>
+        var bEnviar = document.getElementById("enviar")
+        bEnviar.addEventListener("click", function() {
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+            // axios.post('http://localhost:4567', {
+            //     email: email,
+            //     password: password
+            // })
+            let parametros = new URLSearchParams()
+            parametros.append("email", email)
+            parametros.append("password", password)
+            axios.post('http://localhost:4567', parametros)
+            .then(function(response){
+                console.log("respuesta: ", response)
+                document.getElementById("respuesta").innerHTML = response.data.msj + " " + response.data.email
+            })
+            .catch(function(error){
+                console.log("error: ", error)
+            })
+        })
+    </script>
+</body>
+</html>
